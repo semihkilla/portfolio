@@ -1,38 +1,332 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #26293a 0%, #181b23 100%);
+  min-height: 100vh;
+  color: #e6e7ee;
+  scroll-behavior: smooth;
+}
+
+.main-bg {
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 6vw;
+  background: rgba(30, 33, 47, 0.96);
+  box-shadow: 0 2px 20px #0005;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #23e3c9;
+}
+
+.nav-links a {
+  color: #a7f1ef;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2vw;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  transition: background 0.24s, color 0.24s, box-shadow 0.24s;
+  position: relative;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  background: #23e3c91a;
+  color: #23e3c9;
+  box-shadow: 0 2px 8px #23e3c950;
+}
+
+.header-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2.3rem 10vw 1.3rem 10vw;
+  gap: 2.2rem;
+}
+
+.profilbild {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #23e3c9;
+  box-shadow: 0 6px 32px #161a2c60;
+  background: #232323;
+  margin-right: 1.5rem;
+}
+
+.header-content h1 {
+  font-size: 2.35rem;
+  margin: 0;
+  color: #23e3c9;
+  font-weight: 700;
+}
+
+.job-title {
+  color: #a7f1ef;
+  font-size: 1.15rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  font-size: 1.01rem;
+}
+
+.contact-list span,
+.contact-list a {
+  color: #e6e7ee;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.contact-list a:hover {
+  color: #23e3c9;
+  text-decoration: underline;
+}
+
+.section {
+  padding: 3.3rem 10vw 2rem 10vw;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #23e3c9;
+  letter-spacing: 1px;
+}
+
+.profile-box, .modern-card {
+  background: #23253b;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px 0 #161a2c33;
+  border-left: 5px solid #23e3c9;
+  margin-bottom: 2.2rem;
+  padding: 1.7rem 2rem;
+}
+
+.profile-hobbies {
+  background: #23253b;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px 0 #161a2c18;
+  border-left: 5px solid #23e3c9;
+  margin-bottom: 2.2rem;
+  padding: 1.7rem 2rem;
+}
+
+.timeline-modern {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid #23e3c950;
+}
+
+.timeline-modern-item {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 2.4rem;
+}
+
+.timeline-modern-item::before {
+  content: '';
+  position: absolute;
+  left: -13px;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+  background: #23253b;
+  border: 3px solid #23e3c9;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px #23e3c930;
+}
+
+.timeline-modern-date {
+  color: #a7f1ef;
+  font-size: 1.06rem;
+  margin-bottom: 0.15rem;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  justify-content: flex-start;
+}
+
+.project-card {
+  min-width: 220px;
+  max-width: 320px;
+  margin-bottom: 1.5rem;
+  padding: 1.4rem 1.2rem;
+  transition: transform 0.23s, box-shadow 0.24s;
+  border-radius: 1rem;
+  background: #23253b;
+  border-left: 5px solid #23e3c9;
+  box-shadow: 0 2px 12px #23253b60;
+  color: #fff;
+}
+
+.project-card:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 8px 24px #23e3c970;
+  background: #23253b;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #23e3c9;
+}
+
+.project-desc {
+  font-size: 1rem;
+  color: #e6e7eecc;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-badge, .modern-badge {
+  background: #181b23;
+  color: #23e3c9;
+  padding: 0.5rem 1.3rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  box-shadow: 0 2px 8px #23e3c924;
+  transition: background 0.18s, color 0.18s, transform 0.16s;
+  border: 1.5px solid #23e3c9;
+  cursor: pointer;
+}
+
+.skill-badge:hover, .modern-badge:hover {
+  background: #23e3c9;
+  color: #181b23;
+  transform: scale(1.07);
+  border-color: #23e3c9;
+}
+
+.langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5vw;
+}
+
+.lang-item {
+  background: #23253b;
+  padding: 1rem 1.7rem;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  font-size: 1.07rem;
+  min-width: 155px;
+  box-shadow: 0 2px 12px #23e3c924;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 4px solid #23e3c9;
+  transition: background 0.16s, transform 0.16s;
+}
+
+.lang-item:hover {
+  background: #1e222e;
+  color: #23e3c9;
+  transform: scale(1.04);
+  border-left: 4px solid #a7f1ef;
+}
+
+.lang-level {
+  color: #a7f1ef;
+  font-weight: 500;
+  margin-top: 0.2rem;
+  font-size: 0.99rem;
+}
+
+.contact-section {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contact-buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 1.2rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-btn {
+  color: #23e3c9;
+  background: #23253b;
+  border-radius: 22px;
+  padding: 0.6rem 1.6rem;
+  font-size: 1.07rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.7rem;
+  box-shadow: 0 2px 8px #23e3c924;
+  transition: background 0.18s, color 0.18s, transform 0.14s;
+  border: 1.5px solid #23e3c9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contact-btn:hover {
+  background: #23e3c9;
+  color: #23253b;
+  transform: scale(1.07);
+}
+
+footer {
+  padding: 1.4rem 0;
+  text-align: center;
+  color: #a7f1ef88;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .projects, .langs {
+    flex-direction: column;
+    gap: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  .section {
+    padding: 2rem 3vw 1rem 3vw;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2vw;
+  }
+  .header-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2vw 1rem 2vw;
+    gap: 1.5rem;
+  }
+  .profilbild {
+    margin-right: 0;
   }
 }
