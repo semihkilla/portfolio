@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import profilbild from "./assets/profilbild.jpg";
-import { FaGithub, FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaMapMarkerAlt, FaPhone, FaDownload } from "react-icons/fa";
 
 const experiences = [
   {
@@ -57,12 +57,14 @@ const languages = [
 
 function App() {
   return (
-    <div className="main-bg">
-      <nav className="navbar glassy">
-        <span className="logo">Semih Erden</span>
+    <div className="dark-bg">
+      {/* Navigation */}
+      <nav className="portfolio-navbar">
+        <span className="nav-logo">Portfolio.</span>
         <div className="nav-links">
+          <a href="#home" className="active">Home</a>
           <a href="#about">Über mich</a>
-          <a href="#exp">Werdegang</a>
+          <a href="#werdegang">Werdegang</a>
           <a href="#projects">Projekte</a>
           <a href="#skills">Skills</a>
           <a href="#languages">Sprachen</a>
@@ -70,79 +72,112 @@ function App() {
         </div>
       </nav>
 
-      {/* Headercard */}
-      <section className="header-card" id="about">
-        <img src={profilbild} alt="Semih Erden" className="profilbild" />
-        <div className="header-content">
+      {/* HERO SECTION */}
+      <section className="hero" id="home">
+        <div className="hero-left">
+          <h3 className="hero-role">SOFTWARE ENGINEERING STUDENT</h3>
           <h1>Semih Erden</h1>
-          <p className="job-title">
-            Software Engineering Student <br />
-            Universität Stuttgart
+          <p className="hero-desc">
+            Student an der Universität Stuttgart <br />
+            Leidenschaft für Entwicklung und Teamarbeit.
           </p>
-          <div className="contact-list">
-            <span><FaEnvelope /> <a href="mailto:erden.semih1803@gmail.com">erden.semih1803@gmail.com</a></span>
-            <span><FaPhone /> <a href="tel:+491732110883">+49 173 2110883</a></span>
-            <span><FaMapMarkerAlt /> Peter-von-Koblenz Straße 6, 71701 Schwieberdingen</span>
-            <span><FaGithub /> <a href="https://github.com/semihkilla" target="_blank" rel="noopener noreferrer">github.com/semihkilla</a></span>
+          <div className="hero-btns">
+            <a href="mailto:erden.semih1803@gmail.com" className="hero-btn hero-btn-primary">
+              <FaEnvelope /> Kontakt
+            </a>
+            <a
+  href={`${process.env.PUBLIC_URL}/lebenslauf_SemihErden.pdf`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hero-btn hero-btn-secondary"
+>
+  <FaDownload /> Lebenslauf
+</a>
+          </div>
+          <div className="hero-socials">
+            <a href="mailto:erden.semih1803@gmail.com"><FaEnvelope /></a>
+            <a href="https://github.com/semihkilla" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+            <a href="tel:+491732110883"><FaPhone /></a>
+          </div>
+        </div>
+        <div className="hero-right">
+          <div className="hero-img-shape">
+            <img src={profilbild} alt="Semih Erden" className="hero-img" />
           </div>
         </div>
       </section>
 
-      {/* Profil-Text */}
-      <section className="section profile-box">
-        <h2>Profil</h2>
-        <p>
-          Ich bin Semih Erden, 23 Jahre alt, und studiere Software Engineering an der Universität Stuttgart.
-          Während des Studiums habe ich mehrere Softwareprojekte entwickelt, zum Beispiel eine Einkaufslisten-Anwendung und ein Aufgabenverwaltungstool.
-          Ich möchte meine Fähigkeiten in der Softwareentwicklung weiter vertiefen und suche eine Möglichkeit, praktische Erfahrungen zu sammeln und Verantwortung zu übernehmen.
-        </p>
+      {/* Über mich */}
+      <section className="portfolio-section about-section" id="about">
+        <h2>About <span className="purple-accent">Me</span></h2>
+        <div className="about-me-box">
+          <div className="about-me-imgbox">
+            <img src={profilbild} alt="Semih Erden" className="about-me-img" />
+          </div>
+          <div>
+            <p>
+              Ich bin 23 Jahre alt und studiere Software Engineering an der Universität Stuttgart.<br />
+              Während meines Studiums habe ich mehrere Softwareprojekte entwickelt, z.B. eine Einkaufslisten-App und ein Aufgabenverwaltungstool.<br />
+              Ich eigne mir Wissen eigenständig an und liebe es, technische Probleme praktisch zu lösen.
+            </p>
+            <div className="about-contact-info">
+              <div><FaMapMarkerAlt /> Peter-von-Koblenz Straße 6, 71701 Schwieberdingen</div>
+              <div><FaEnvelope /> erden.semih1803@gmail.com</div>
+              <div><FaPhone /> +49 173 2110883</div>
+              <div><FaGithub /> github.com/semihkilla</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Werdegang */}
-      <section id="exp" className="section">
-        <h2>Bildungsweg</h2>
-        <ul className="timeline-modern">
-          {experiences.map((exp, idx) => (
-            <li className="timeline-modern-item" key={idx}>
-              <div className="timeline-modern-date">{exp.date}</div>
-              <div>
-                <strong>{exp.title}</strong>
-                <div>{exp.school}</div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+<section className="portfolio-section" id="werdegang">
+  <h2>Werdegang</h2>
+  <ul className="timeline">
+  {experiences.map((exp, idx) => (
+    <li className="timeline-item" key={idx}>
+      <div className="timeline-marker"></div>
+      <div className="timeline-content">
+        <span className="timeline-date">{exp.date}</span>
+        <strong>{exp.title}</strong>
+        <div>{exp.school}</div>
+      </div>
+    </li>
+  ))}
+</ul>
+
+</section>
+
 
       {/* Projekte */}
-      <section id="projects" className="section">
+      <section className="portfolio-section" id="projects">
         <h2>Projekte</h2>
-        <div className="projects">
+        <div className="project-grid">
           {projects.map((p, idx) => (
-            <div className="project-card modern-card" key={idx}>
-              <div className="project-title">{p.name}</div>
-              <div className="project-desc">{p.desc}</div>
+            <div className="project-card" key={idx}>
+              <h3>{p.name}</h3>
+              <p>{p.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Skills */}
-      <section id="skills" className="section">
+      <section className="portfolio-section" id="skills">
         <h2>Fähigkeiten & Kenntnisse</h2>
-        <div className="skills">
+        <div className="skills-grid">
           {skills.map((s, i) => (
-            <span className="skill-badge modern-badge" key={i}>{s}</span>
+            <span className="skill-chip" key={i}>{s}</span>
           ))}
         </div>
       </section>
 
       {/* Sprachen */}
-      <section id="languages" className="section">
+      <section className="portfolio-section" id="languages">
         <h2>Sprachen</h2>
-        <div className="langs">
+        <div className="languages-grid">
           {languages.map((l, i) => (
-            <div className="lang-item modern-card" key={i}>
+            <div className="language-card" key={i}>
               <span>{l.name}</span>
               <span className="lang-level">{l.level}</span>
             </div>
@@ -150,28 +185,19 @@ function App() {
         </div>
       </section>
 
-      {/* Interessen */}
-      <section className="section">
-        <h2>Interessen & Hobbys</h2>
-        <div className="profile-hobbies">
-          <p>
-            Programmieren, Basketball, Gaming.<br />
-            Großes Interesse an aktuellen Technikthemen und digitalen Trends.
-            Begeisterung für eigenständige Recherche und selbstständiges Aneignen von neuem Wissen.
-          </p>
-        </div>
-      </section>
-
       {/* Kontakt */}
-      <section id="contact" className="section contact-section">
+      <section className="portfolio-section contact-section" id="contact">
         <h2>Kontakt</h2>
-        <p>Du kannst mich gerne jederzeit per E-Mail oder GitHub erreichen!</p>
-        <div className="contact-buttons">
-          <a className="contact-btn" href="mailto:erden.semih1803@gmail.com"><FaEnvelope /> E-Mail senden</a>
-          <a className="contact-btn" href="https://github.com/semihkilla" target="_blank" rel="noopener noreferrer"><FaGithub /> Zum GitHub</a>
+        <p>Du kannst mich gerne jederzeit per E-Mail oder per Telefon erreichen!</p>
+        <div className="contact-btns">
+          <a href="mailto:erden.semih1803@gmail.com" className="hero-btn hero-btn-primary">
+            <FaEnvelope /> E-Mail senden
+          </a>
+          <a href="tel:+491732110883" target="_blank" rel="noopener noreferrer" className="hero-btn hero-btn-secondary">
+            <FaPhone /> Anrufen
+          </a>
         </div>
       </section>
-
       <footer>
         <span>&copy; {new Date().getFullYear()} Semih Erden</span>
       </footer>
