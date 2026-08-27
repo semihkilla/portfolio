@@ -1,0 +1,169 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,top=1.25cm,bottom=1.25cm,left=1.55cm,right=1.55cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\linespread{1.02}
+
+\definecolor{sectiongray}{RGB}{55,55,55}
+\titleformat{\section}
+  {\large\bfseries\color{sectiongray}}
+  {}{0pt}{}
+  [\vspace{-0.15em}\hrule]
+\titlespacing*{\section}{0pt}{0.75em}{0.4em}
+
+\setlist[itemize]{
+  leftmargin=1.35em,
+  itemsep=0.08em,
+  topsep=0.15em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\cventry}[4]{%
+\noindent
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+  \textbf{#1} & #3 \\
+  \textit{#2} & \textit{#4}
+\end{tabularx}
+}
+
+\newcommand{\projectentry}[3]{%
+\noindent
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+  \textbf{#1} & \textit{#2}
+\end{tabularx}
+#3
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Semih Erden}\\[0.3em]
+  Schwieberdingen
+  \enspace|\enspace
+  \href{mailto:erden.semih1803@gmail.com}{erden.semih1803@gmail.com}
+  \enspace|\enspace
+  +49 173 2110883
+\end{center}
+
+\vspace{-0.1em}
+
+\section{Bildungsweg}
+
+\cventry
+  {Universität Stuttgart}
+  {Bachelor of Science Wirtschaftsinformatik}
+  {Stuttgart}
+  {Okt. 2025 -- heute}
+
+\cventry
+  {Universität Stuttgart}
+  {Bachelor of Science Software Engineering}
+  {Stuttgart}
+  {Okt. 2022 -- Sep. 2025}
+
+\cventry
+  {Mathilde-Planck-Schule}
+  {Allgemeine Hochschulreife, Sozialwissenschaftliches Gymnasium}
+  {Ludwigsburg}
+  {Sep. 2020 -- Juli 2022}
+
+\section{Praktische Erfahrung}
+
+\cventry
+  {Almopraxis}
+  {Aushilfe an der Rezeption}
+  {Korntal-Münchingen}
+  {März 2026 -- heute}
+
+\begin{itemize}
+  \item Patientenempfang, Terminvergabe und Erfassung relevanter Patienteninformationen in der Praxissoftware
+  \item Bearbeitung telefonischer und persönlicher Anliegen sowie Unterstützung bei organisatorischen Praxisabläufen
+  \item Erste Analyse technischer Störungen und Koordination mit Software- und IT-Dienstleistern bei weiterführenden Problemen
+\end{itemize}
+
+\cventry
+  {ITversum, ehem. Leis-IT}
+  {Praktika im Bereich Fachinformatik für Systemintegration}
+  {Schwieberdingen}
+  {Nov. 2017 / Juli 2018}
+
+\begin{itemize}
+  \item Einrichtung von PCs und Peripheriegeräten sowie Einblicke in die Installation von Routern, Telefonanlagen und Druckern
+  \item Unterstützung bei Wartungs- und Reinigungsarbeiten sowie bei Datensicherungen mit verschiedenen Datenträgern und Systemen
+\end{itemize}
+
+\section{Ausgewählte Softwareprojekte}
+
+\projectentry
+  {TaskMaster -- Todo- und Assignee-Verwaltung}
+  {Vue 3, Spring Boot, MariaDB, Docker}
+  {Full-Stack-Webanwendung mit REST-API, relationaler Datenbank, Zuordnung von Aufgaben und Bearbeitern, Filterung, Suche sowie CSV-Import und -Export. Bereitstellung des vollständigen Stacks über Docker Compose.}
+
+\projectentry
+  {Bibliotheksverwaltungssystem}
+  {Java, JavaFX, PostgreSQL, Maven}
+  {Desktop-Anwendung zur Verwaltung von Büchern, Exemplaren, Kunden und Ausleihen mit JDBC-Datenbankzugriff, Validierung, Gebührenlogik und automatisierten Tests.}
+
+\projectentry
+  {Softwarepraktikum -- Rezept- und Einkaufslistenplattform}
+  {Webentwicklung, Datenbank, Serverbetrieb}
+  {Entwicklung einer webbasierten Anwendung im universitären Softwarepraktikum zur Verwaltung von Rezepten und Einkaufslisten mit gemeinsamer Entwicklung im Team und Betrieb auf einem Server.}
+
+\projectentry
+  {Uni- und Arbeitszeit-Tracker}
+  {React, JavaScript, Vite}
+  {Entwicklung einer mobilen Web-App mit ICS-Stundenplanimport, Arbeitszeiterfassung, Prüfungsterminen, Notenverwaltung, Konflikterkennung und lokaler Datenpersistenz.}
+
+\section{IT- und Softwarekenntnisse}
+
+\textbf{Programmiersprachen:}
+Java, JavaScript, TypeScript, SQL, HTML, CSS; Python (Grundkenntnisse)
+
+\vspace{0.18em}
+\textbf{Frameworks und Backend:}
+React, Vue.js, Spring Boot, JavaFX, Vite, REST-APIs
+
+\vspace{0.18em}
+\textbf{Datenbanken:}
+PostgreSQL, MariaDB, relationale Datenbanken, Supabase
+
+\vspace{0.18em}
+\textbf{Entwicklung und Tools:}
+Git, Docker, Docker Compose, Maven, npm
+
+\vspace{0.18em}
+\textbf{Systeme und Administration:}
+Windows, Linux, macOS, PowerShell (Grundkenntnisse), IT-Support, Troubleshooting
+
+\vspace{0.18em}
+\textbf{Netzwerk und Infrastruktur:}
+LAN/WLAN, VPN, Router, Drucker, Arbeitsplatz- und Geräteinstallation
+
+\section{Sprachen}
+
+\textbf{Deutsch:} Muttersprache
+\enspace|\enspace
+\textbf{Türkisch:} Muttersprache
+\enspace|\enspace
+\textbf{Englisch:} B2
+\enspace|\enspace
+\textbf{Spanisch:} A2
+\enspace|\enspace
+\textbf{Arabisch:} A1
+
+\end{document}
